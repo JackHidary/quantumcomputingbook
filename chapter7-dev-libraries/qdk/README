@@ -1,0 +1,12 @@
+To run the example program in the QDK:
+
+(1) Type `dotnet run` at a command line.
+
+(2) Run the file through visual studio or visual studio code.
+
+The output should be
+
+Number of ones measured: 10.
+
+When run, two directories called `bin` and `obj` are created.
+
