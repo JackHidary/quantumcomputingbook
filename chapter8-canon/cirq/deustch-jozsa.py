@@ -1,36 +1,52 @@
-"""Deustch-Jozsa algorithm."""
+"""Deustch-Jozsa algorithm in Cirq."""
 
-# Import the Cirq Library
+# Import the Cirq library
 import cirq
 
-# Get two qubits, a data qubit and target qubit, respectively
-q0, q1 = cirq.LineQubit.range(2)
+# Get three qubits -- two data and one target qubit
+q0, q1, q2 = cirq.LineQubit.range(3)
 
-# Dictionary of oracles
-oracles = {'0': [], '1': [cirq.X(q1)], 'x': [cirq.CNOT(q0, q1)], 
-           'notx': [cirq.CNOT(q0, q1), cirq.X(q1)]}
+# Oracles for constant functions
+constant = ([], [cirq.X(q2)])
 
-def deutsch_algorithm(oracle):
-    """Yields a circuit for Deustch's algorithm given operations implementing
-    the oracle."""
-    yield cirq.X(q1)
+# Oracles for balanced functions
+balanced = ([cirq.CNOT(q0, q2)], 
+            [cirq.CNOT(q1, q2)], 
+            [cirq.CNOT(q0, q2), cirq.CNOT(q1, q2)],
+            [cirq.CNOT(q0, q2), cirq.X(q2)], 
+            [cirq.CNOT(q1, q2), cirq.X(q2)], 
+            [cirq.CNOT(q0, q2), cirq.CNOT(q1, q2), cirq.X(q2)])
+
+
+def your_circuit(oracle):
+    """Yields a circiut for the Deustch-Jozsa algorithm on three qubits."""
+    # phase kickback trick
+    yield cirq.X(q2), cirq.H(q2)
+    
+    # equal superposition over input bits
     yield cirq.H(q0), cirq.H(q1)
+    
+    # query the function
     yield oracle
-    yield cirq.H(q0)
-    yield cirq.measure(q0)
-
-# Display each circuit for all oracles
-for key, oracle in oracles.items():
-    print('Circuit for {}...'.format(key))
-    print(cirq.Circuit.from_ops(deutsch_algorithm(oracle)), end="\n\n")
-
+    
+    # interference to get result, put last qubit into |1>
+    yield cirq.H(q0), cirq.H(q1), cirq.H(q2)
+    
+    # a final OR gate to put result in final qubit
+    yield cirq.X(q0), cirq.X(q1), cirq.CCX(q0, q1, q2)
+    yield cirq.measure(q2)
+    
 # Get a simulator
 simulator = cirq.Simulator()
 
-# Execute the circuit for each oracle to distingiush constant from balanced
-for key, oracle in oracles.items():
-    result = simulator.run(
-        cirq.Circuit.from_ops(deutsch_algorithm(oracle)), 
-        repetitions=10
-    )
-    print('oracle: {:<4} results: {}'.format(key, result))
+# Execute circuit for oracles of constant value functions
+print('Your result on constant functions')
+for oracle in constant:
+    result = simulator.run(cirq.Circuit.from_ops(your_circuit(oracle)), repetitions=10)
+    print(result)
+    
+# Execute circuit for oracles of balanced functions
+print('Your result on balanced functions')
+for oracle in balanced:
+    result = simulator.run(cirq.Circuit.from_ops(your_circuit(oracle)), repetitions=10)
+    print(result)
