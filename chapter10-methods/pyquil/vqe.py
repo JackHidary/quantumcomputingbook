@@ -8,7 +8,7 @@ from scipy.optimize import minimize
 from pyquil.quil import Program
 import pyquil.api as api
 from pyquil.paulis import sZ
-from pyquil.gates import RX, X, MEASURE
+from pyquil.gates import RX, RZ, X, MEASURE
 
 from grove.pyvqe.vqe import VQE
 
@@ -144,6 +144,20 @@ res = noisy_qvm.run(p, [0], 10)
 print("Outcome of NOT and MEASURE circuit on noisy measurement simulator:")
 print(res)
 
+# Loop over a range of angles and plot expectation with sampling 
+sampled = [vqe_inst.expectation(small_ansatz([angle]), hamiltonian, 1000, noisy_meas_qvm)
+           for angle in angle_range]
+
+# Plot the sampled expectation
+plt.plot(angle_range, sampled, "-o")
+
+# Plotting options
+plt.title("VQE on a Noisy Measurement Simulator")
+plt.xlabel("Angle [radians]")
+plt.ylabel("Expectation value")
+plt.grid()
+plt.show()
+
 # Study the effect of increasing measurement noise in VQE
 data = []
 noises = np.linspace(0.0, 0.5, 20)
@@ -158,3 +172,27 @@ plt.plot(noises, data)
 plt.xlabel('Noise level %')
 plt.ylabel('Eigenvalue')
 plt.show()
+
+# ==========================
+# More sophisticated ansatze
+# ==========================
+print()
+print(" More sophisticated ansatze ".center(80, "="))
+print()
+
+# Function for an anstaz with two parameters
+def smallish_ansatz(params):
+    """Returns an ansatz with two parameters."""
+    return Program(RX(params[0], 0), RZ(params[1], 0))
+
+print("Ansatz with two gates and two parameters (with example values):")
+print(smallish_ansatz([1.0, 2.0]))
+
+# Get a VQE instance
+vqe_inst = VQE(minimizer=minimize, minimizer_kwargs={'method': 'nelder-mead'})
+
+# Do the minimization and return the best angle
+initial_angles = [1.0, 1.0]
+result = vqe_inst.vqe_run(smallish_ansatz, hamiltonian, initial_angles, None, qvm=qvm)
+print("\nMinimum energy =", round(result["fun"], 4))
+print("Best angle =", round(result["x"][0], 4))
