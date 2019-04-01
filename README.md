@@ -1,4 +1,4 @@
-# Online Site for Quantum Computing: A Practical Approach
+# Online Site for Quantum Computing: An Applied Approach
 
 Welcome to the online site for Quantum Computing: A Practical Approach published by Springer.
 
