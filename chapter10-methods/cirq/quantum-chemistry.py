@@ -21,20 +21,20 @@ random_seed = 8317
 T = openfermion.random_hermitian_matrix(n_qubits, seed=random_seed)
 print("Hamiltonian:", T, sep="\n")
 
-# Diagonalize T and obtain basis transformation matrix (aka "u").
-eigenvalues, eigenvectors = numpy.linalg.eigh(T)
-basis_transformation_matrix = eigenvectors.transpose()
-
-# Print out familiar OpenFermion "FermionOperator" form of H.
+# Compute the OpenFermion "FermionOperator" form of the Hamiltonian
 H = openfermion.FermionOperator()
 for p in range(n_qubits):
     for q in range(n_qubits):
         term = ((p, 1), (q, 0))
         H += openfermion.FermionOperator(term, T[p, q])
-print("Fermion operator:")
+print("\nFermion operator:")
 print(H)
 
-# Initialize the qubit register.
+# Diagonalize T and obtain basis transformation matrix (aka "u")
+eigenvalues, eigenvectors = numpy.linalg.eigh(T)
+basis_transformation_matrix = eigenvectors.transpose()
+
+# Initialize the qubit register
 qubits = cirq.LineQubit.range(n_qubits)
 
 # Rotate to the eigenbasis
@@ -52,7 +52,7 @@ for k, eigenvalue in enumerate(eigenvalues):
     phase = -eigenvalue * simulation_time
     circuit.append(cirq.Rz(rads=phase).on(qubits[k]))
 
-# Finally, restore basis
+# Finally, change back to the computational basis
 basis_rotation = openfermioncirq.bogoliubov_transform(
     qubits, basis_transformation_matrix
 )
@@ -88,7 +88,7 @@ simulated_state = result.final_state
 
 # Print final fidelity
 fidelity = abs(numpy.dot(simulated_state, numpy.conjugate(exact_state)))**2
-print("\nfidelity =", fidelity)
+print("\nfidelity =", round(fidelity, 4))
 
 # ===============================================
 # Compile the circuit for different architectures
