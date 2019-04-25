@@ -7,7 +7,12 @@ You will find a number of resources here including:
   - Problem sets with solutions,
   - Links to further resources, and
   - Updates to the book.
- 
+
+# Review Questions
+
+* [Chapter 3](https://docs.google.com/document/d/1j1CZ4SUvROZJ_iw0X6ao-enTPJj8QFKcdK8oiON2FZo/edit?usp=sharing)
+
+* [Chapter 4](https://docs.google.com/document/d/14hLTqFMMsSMEI-1SKDLrSmqGuqPomeCXq5xtsbL9tlU/edit?usp=sharing)
 
 # Further Resources
 
