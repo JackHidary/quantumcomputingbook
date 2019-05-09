@@ -48,7 +48,7 @@ def mixer(beta):
 def qaoa(gammas, betas):
     """Returns a QAOA circuit."""
     circ = cirq.Circuit()
-    circ.append(cirq.H.on_each([q for row in qreg for q in row]))
+    circ.append(cirq.H.on_each(*[q for row in qreg for q in row]))
     
     for i in range(len(gammas)):
         circ += cost_circuit(gammas[i])
