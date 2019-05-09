@@ -36,7 +36,7 @@ def main():
     print(circuit)
 
     # Sample from the circuit a couple times
-    simulator = cirq.google.XmonSimulator()
+    simulator = cirq.Simulator()
     result = simulator.run(circuit, repetitions=circuit_sample_count)
     frequencies = result.histogram(key='result', fold_func=bitstring)
     print('\nSampled results:\n{}'.format(frequencies))
@@ -68,7 +68,7 @@ def make_bernstein_vazirani_circuit(input_qubits, output_qubit, oracle):
     c.append([
         cirq.X(output_qubit),
         cirq.H(output_qubit),
-        cirq.H.on_each(input_qubits),
+        cirq.H.on_each(*input_qubits),
     ])
 
     # Query oracle
@@ -76,7 +76,7 @@ def make_bernstein_vazirani_circuit(input_qubits, output_qubit, oracle):
 
     # Measure in X basis
     c.append([
-        cirq.H.on_each(input_qubits),
+        cirq.H.on_each(*input_qubits),
         cirq.measure(*input_qubits, key='result')
     ])
 
