@@ -58,7 +58,7 @@ regB = cirq.LineQubit.range(n, n + m)
 circ = cirq.Circuit()
 
 # Hadamard all qubits in the readout register
-circ.append(cirq.H.on_each(regA))
+circ.append(cirq.H.on_each(*regA))
 
 # Get a Cirq gate for the unitary matrix
 ugate = cirq.ops.matrix_gates.TwoQubitMatrixGate(unitary)
