@@ -28,19 +28,19 @@ def make_quantum_teleportation_circuit(ranX, ranY):
     # original quantum Message on Bob's entangled qubit
     circuit.append([cirq.CNOT(alice, bob), cirq.CZ(msg, bob)])
 
-    return circuit
+    return msg, circuit
 
 
 def main():
     # Encode a random state to teleport
     ranX = random.random()
     ranY = random.random()
-    circuit = make_quantum_teleportation_circuit(ranX, ranY)
+    msg, circuit = make_quantum_teleportation_circuit(ranX, ranY)
 
     # Simulate the circuit
     sim = cirq.Simulator()
     message = sim.simulate(cirq.Circuit.from_ops(
-        [cirq.X(0)**ranX, cirq.Y(0)**ranY]))
+        [cirq.X(msg)**ranX, cirq.Y(msg)**ranY]))
 
     # Print the Bloch Sphere of Alice's qubit
     print("Bloch Sphere of Alice's qubit:")

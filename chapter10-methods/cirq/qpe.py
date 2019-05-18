@@ -2,6 +2,7 @@
 
 # Imports
 import numpy as np
+from scipy.stats import unitary_group
 
 import cirq
 
@@ -26,10 +27,16 @@ def binary_decimal(string):
 # Input to QPE
 # =============================================================================
 
-# Number of qubits and dimension of the eigenstate
-m = 2
+# Set seed for reproducible results
+np.random.seed(123)
 
-# Get a unitary matrix on two qubits
+# Get a random unitary matrix on two qubits
+m = 2
+dim = 2**m
+unitary = unitary_group.rvs(dim)
+
+unitary = np.identity(4)
+
 xmat = np.array([[0, 1], [1, 0]])
 zmat = np.array([[1, 0], [0, -1]])
 unitary = np.kron(xmat, zmat)
@@ -39,14 +46,14 @@ print("Unitary:")
 print(unitary)
 
 # Diagonalize it classically
-evals, _ = np.linalg.eig(unitary)
+evals, evecs = np.linalg.eig(unitary)
 
 # =============================================================================
 # Building the circuit for QPE
 # =============================================================================
 
 # Number of qubits in the readout/answer register (# bits of precision)
-n = 2
+n = 8
 
 # Readout register
 regA = cirq.LineQubit.range(n)
@@ -59,6 +66,9 @@ circ = cirq.Circuit()
 
 # Hadamard all qubits in the readout register
 circ.append(cirq.H.on_each(regA))
+
+# Hadamard all qubits in the second register
+#circ.append(cirq.H.on_each(regB))
 
 # Get a Cirq gate for the unitary matrix
 ugate = cirq.ops.matrix_gates.TwoQubitMatrixGate(unitary)
@@ -81,36 +91,40 @@ for k in range(n - 1):
         circ.append(crot(regA[j], regA[targ]))
 circ.append(cirq.H.on(regA[n - 1]))
 
+"""
+# This is the QFT!
+for k in reversed(range(n)):
+    circ.append(cirq.H.on(regA[k]))
+    for j in reversed(range(k)):
+        exp = 2**(j - k)
+        rot = cirq.Rz(exp)
+        crot = cirq.ControlledGate(rot)
+        circ.append(crot(regA[j], regA[k]))
+"""
+
 # Measure all qubits in the readout register
 circ.append(cirq.measure(*regA, key="z"))
 
 # Print out the circuit
-print("Circuit:")
-print(circ)
+#print("Circuit:")
+#print(circ[5:])
 
 # =============================================================================
 # Executing the circuit for QPE
 # =============================================================================
 
-# Get a simulator
 sim = cirq.Simulator()
 
-# Simulate the circuit and get the most frequent measurement outcomes
 res = sim.run(circ, repetitions=1000)
+
 hist = res.histogram(key="z")
+
 top = hist.most_common(2)
 
-# =============================================================================
-# Compute the eigenvalues from QPE and compare them to the actual values
-# =============================================================================
-
-# Eigenvalues from QPE
 estimated = [np.exp(2j * np.pi * binary_decimal(bin(x[0]))) for x in top]
 
-# Print out the estimated eigenvalues
 print("\nEigenvalues from QPE:")
-print(set(sorted(estimated, key=lambda x: abs(x)**2)))
+print(sorted(estimated, key=lambda x: abs(x)**2))
 
-# Print out the actual eigenvalues
 print("\nActual eigenvalues:")
-print(set(sorted(evals, key=lambda x: abs(x)**2)))
+print(sorted(evals, key=lambda x: abs(x)**2))

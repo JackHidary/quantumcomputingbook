@@ -2,6 +2,7 @@
 
 # Imports
 import matplotlib.pyplot as plt
+import sympy
 
 import cirq
 
@@ -10,7 +11,7 @@ qbit = cirq.LineQubit(0)
 circ = cirq.Circuit()
 
 # Get a symbol
-symbol = cirq.Symbol("t")
+symbol = sympy.Symbol("t")
 
 # Add a parameterized gate
 circ.append(cirq.XPowGate(exponent=symbol)(qbit))

@@ -16,7 +16,7 @@ def main():
     print(qft_circuit)
     
     # Simulate and collect the final state
-    simulator = cirq.google.XmonSimulator()
+    simulator = cirq.Simulator()
     result = simulator.simulate(qft_circuit)
     
     # Display the final state
