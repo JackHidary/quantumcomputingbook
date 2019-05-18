@@ -1,4 +1,7 @@
-"""Continuous time quantum walk in pyQuil."""
+"""Continuous time quantum walk in pyQuil.
+
+Adapted from https://github.com/rigetti/pyquil/blob/master/examples/quantum_walk.ipynb.
+"""
 
 # Imports
 import numpy as np
