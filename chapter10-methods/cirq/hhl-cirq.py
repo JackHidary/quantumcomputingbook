@@ -338,6 +338,7 @@ def main():
                    0.58386534+6.01593489e-08j]])
 
     # The |b> vector is defined by these gates on the zero state
+    # |b> = (0.64510-0.47848j, 0.35490-0.47848j)
     input_prep_gates = [cirq.Rx(1.276359), cirq.Rz(1.276359)]
 
     # Expected expectation values

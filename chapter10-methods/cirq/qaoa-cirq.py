@@ -40,10 +40,10 @@ def cost_circuit(gamma):
     return circ
 
 def mixer(beta):
-  """Generator for U(H_B, beta) layer (mixing layer)"""
-  for row in qreg:
-    for qubit in row:
-      yield cirq.X(qubit)**beta
+    """Generator for U(H_B, beta) layer (mixing layer)"""
+    for row in qreg:
+        for qubit in row:
+            yield cirq.X(qubit)**beta
 
 def qaoa(gammas, betas):
     """Returns a QAOA circuit."""
