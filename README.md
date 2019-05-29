@@ -16,7 +16,7 @@ You will find a number of resources here including:
 
 # Further Resources
 
-Google Cirq Colab notebook tutorials/videos
+* Google Cirq Colab notebook tutorials/videos
     * [QC Refresher Tutorial](https://docs.google.com/presentation/d/1rMaRs-7JY-PTBx0MDroMcI3j72uBYAFT86O6O-JNl-0/edit?usp=sharing)
     * [QC Tutorial Video](https://drive.google.com/file/d/18uf9nuMzUW86zb80cE81ynqIe3cHqW7l/view?usp=sharing&ts=5c4b8486)
     * [QC Hardware Tutorial](https://docs.google.com/presentation/d/1yYWggyACrk5F5ZQcB1yensWmiFZWCaMp_tAZSEi4zOg/edit?usp=sharing)
