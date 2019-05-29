@@ -22,7 +22,7 @@ circ.measure(qreg, creg)
 print(circ.draw())
 
 # Get a backend to run on
-backend = qiskit.BasicAer.get_backend("statevector_simulator")
+backend = qiskit.BasicAer.get_backend("qasm_simulator")
 
 # Execute the circuit on the backend and get the measurement results
 job = qiskit.execute(circ, backend, shots=10)
