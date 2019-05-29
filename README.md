@@ -3,10 +3,10 @@
 Welcome to the online site for Quantum Computing: An Applied Approach published by Springer.
 
 You will find a number of resources here including:
-  - Code for the algorithms discussed in the book,
-  - Problem sets with solutions,
-  - Links to further resources, and
-  - Updates to the book.
+  - Code for the algorithms discussed in the book
+  - Problem sets with solutions
+  - Links to further resources 
+  - Updates to the book
 
 # Review Questions
 
