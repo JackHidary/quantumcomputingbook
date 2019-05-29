@@ -1,4 +1,4 @@
-![](file://cover.png)
+![](cover.png)
 
 # Online Site for Quantum Computing: An Applied Approach
 
