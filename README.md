@@ -10,9 +10,9 @@ You will find a number of resources here including:
 
 # Review Questions
 
-* [Chapter 3](https://docs.google.com/document/d/1j1CZ4SUvROZJ_iw0X6ao-enTPJj8QFKcdK8oiON2FZo/edit?usp=sharing)
+* [Chapter 2](./chapter02/review-questions.md)
 
-* [Chapter 4](https://docs.google.com/document/d/14hLTqFMMsSMEI-1SKDLrSmqGuqPomeCXq5xtsbL9tlU/edit?usp=sharing)
+* [Chapter 3](./chapter03/review-questions.md)
 
 # Further Resources
 
