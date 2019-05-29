@@ -1,3 +1,5 @@
+![](file://cover.png)
+
 # Online Site for Quantum Computing: An Applied Approach
 
 Welcome to the online site for Quantum Computing: An Applied Approach published by Springer.
