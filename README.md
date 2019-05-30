@@ -17,11 +17,11 @@ You will find a number of resources here including:
 * [Chapter 3](./chapter03/review-questions.md)
 
 
-## Further Resources
+# Further Resources
 
-* [Lecture & workshop recordings from Google's Cirq Bootcamp on May 10 - 11, 2019](https://drive.google.com/corp/drive/folders/18cCJ_AJ-YeCmK0XwD3QbC1ppdUe99ykc)
+* [Recordings from Google's Cirq Bootcamp on May 10 - 11, 2019](https://drive.google.com/corp/drive/folders/18cCJ_AJ-YeCmK0XwD3QbC1ppdUe99ykc)
 
-# Instructors
+*Instructors*
 
 * Stefan Leichenauer, X
 * Dave Bacon, Google
@@ -33,7 +33,7 @@ You will find a number of resources here including:
 * Kenneth Brown, Duke University
 
 
-# Notebooks
+*Notebooks*
 
 * [Intro to writing quantum algorithms in Cirq](https://colab.research.google.com/drive/1mrDPc0HSBxgD_-wwif_gUGriM3VTNYoy#forceEdit=true&offline=true&sandboxMode=true)
 * [Quantum simulation of electronic structure](https://colab.research.google.com/drive/1-oQy0FTtio0P7wUCc3ge7PXlk7aWSAdM)
@@ -43,7 +43,7 @@ You will find a number of resources here including:
 * [Ion device class](https://colab.research.google.com/drive/1p_SLX83UzudhHLeZ6UXx_GAp67ElxMXW)
 
 
-# Presentations
+*Presentations*
 
 * [Quantum computing refresher](https://drive.google.com/file/d/1JPk_Isr3BzM7t1EZGW0jon2k-78Hn_W5/view?usp=sharing)
 * [Intro to quantum hardware](https://drive.google.com/file/d/1WSwXU_PVArN32tufvBIz2wp7kK2NPMbj/view?usp=sharing)
