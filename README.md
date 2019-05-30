@@ -2,7 +2,7 @@
 
 # Online Site for Quantum Computing: An Applied Approach
 
-Welcome to the online site for Quantum Computing: An Applied Approach published by Springer.
+Welcome to the online site for *Quantum Computing: An Applied Approach published by Springer*, to be published in summer 2019.
 
 You will find a number of resources here including:
   - Code for the algorithms discussed in the book
