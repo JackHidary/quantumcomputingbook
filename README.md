@@ -1,4 +1,4 @@
-![](cover.png)
+![Image of QC Book Cover](https://i.imgur.com/uqOxr86.png)
 
 # Online Site for Quantum Computing: An Applied Approach
 
