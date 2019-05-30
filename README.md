@@ -19,7 +19,7 @@ You will find a number of resources here including:
 
 # Further Resources
 
-* [Recordings from Google's Cirq Bootcamp on May 10 - 11, 2019](https://drive.google.com/corp/drive/folders/18cCJ_AJ-YeCmK0XwD3QbC1ppdUe99ykc)
+[Recordings from Google's Cirq Bootcamp on May 10 - 11, 2019](https://drive.google.com/corp/drive/folders/18cCJ_AJ-YeCmK0XwD3QbC1ppdUe99ykc)
 
 *Instructors*
 
