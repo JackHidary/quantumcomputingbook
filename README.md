@@ -10,7 +10,7 @@ You will find a number of resources here including:
   - Links to further resources 
   - Updates to the book
 
-# Review Questions
+# Problem Sets
 
 * Chapter 1
 
@@ -19,6 +19,9 @@ You will find a number of resources here including:
 * Chapter 3
 
 * Chapter 9
+
+
+For faculty using the book as a course textbook please email jack@hidary.com for solutions.
 
 
 # Further Resources
