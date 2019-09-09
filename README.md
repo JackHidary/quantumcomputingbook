@@ -6,11 +6,11 @@ Welcome to the online site for *Quantum Computing: An Applied Approach published
 
 You will find a number of resources here including:
   - Code for the algorithms discussed in the book
-  - Problem sets with solutions
+  - Problem sets
   - Links to further resources 
   - Updates to the book
 
-# Review Questions
+# Problem Sets
 
 * [Chapter 1](./chapter01/chapter01.pdf)
 
@@ -19,6 +19,8 @@ You will find a number of resources here including:
 * [Chapter 3](./chapter03/chapter03.pdf)
 
 * [Chapter 9](./chapter09/chapter09.pdf)
+
+For faculty using the book as a course textbook please email jack@hidary.com for solutions.
 
 # Further Resources
 
