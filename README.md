@@ -12,9 +12,13 @@ You will find a number of resources here including:
 
 # Review Questions
 
+* [Chapter 1](./chapter02/review-questions.md)
+
 * [Chapter 2](./chapter02/review-questions.md)
 
 * [Chapter 3](./chapter03/review-questions.md)
+
+* [Chapter 9](./chapter03/review-questions.md)
 
 
 # Further Resources
