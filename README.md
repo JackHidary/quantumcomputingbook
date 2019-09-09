@@ -6,7 +6,7 @@ Welcome to the online site for *Quantum Computing: An Applied Approach published
 
 You will find a number of resources here including:
   - Code for the algorithms discussed in the book
-  - Problem sets with solutions
+  - Problem sets
   - Links to further resources 
   - Updates to the book
 
