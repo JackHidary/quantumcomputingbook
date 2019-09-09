@@ -20,6 +20,8 @@ You will find a number of resources here including:
 
 * [Chapter 9](./chapter09/chapter09.pdf)
 
+Additional problem sets for others chapters coming soon. 
+
 For faculty using the book as a course textbook please email jack@hidary.com for solutions.
 
 # Further Resources
