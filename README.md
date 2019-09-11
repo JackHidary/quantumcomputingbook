@@ -2,11 +2,13 @@
 
 # Online Site for Quantum Computing: An Applied Approach
 
-Welcome to the online site for *Quantum Computing: An Applied Approach published by Springer*, to be published in summer 2019.
+Welcome to the online site for *Quantum Computing: An Applied Approach published by Springer*. 
 
-You will find a number of resources here including:
-  - Code for the algorithms discussed in the book
+[Here is the link to the hardcover and kindle versions on Amazon.](https://www.amazon.com/Quantum-Computing-Approach-Jack-Hidary-ebook/dp/B07X7NDFLZ/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=)
+
+You will find a number of resources on this github site including:
   - Problem sets
+  - Code for the algorithms discussed in the book
   - Links to further resources 
   - Updates to the book
 
