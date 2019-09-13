@@ -22,6 +22,8 @@ You will find a number of resources on this github site including:
 
 * [Chapter 4](./chapter04/chapter04.pdf)
 
+* [Chapter 5](./chapter05/chapter05.pdf)
+
 * [Chapter 9](./chapter09/chapter09.pdf)
 
 Additional problem sets for others chapters coming soon.  
