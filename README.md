@@ -26,9 +26,9 @@ You will find a number of resources on this github site including:
 
 * [Chapter 8](./chapter08/problems/chapter08.pdf)
 
-* [Chapter 9](./chapter09/chapter09.pdf)
+* [Chapter 9](./chapter09/problems/chapter09.pdf)
 
-Additional problem sets for others chapters coming soon.  
+Additional problem sets for others chapters coming soon.
 
 The problem sets have been devloped by:  Jack Hidary, Ryan Larose, Stefan Leichenauer and James Myers.  If you would like to contribute additional problems let us know!  This is for the whole community.  jack@hidary.com 
 
