@@ -56,17 +56,15 @@ For faculty using the book as a course textbook please email jack@hidary.com for
 
 ## Book Reviews 
 
-“This is the best book for a course in quantum computing that I have seen. It gives straightforward explanations of the foundations, history, and hardware, and it walks through executable code for many important algorithms. Additionally, the book brings the reader up to speed with all the math that is needed. I plan to use the book in my course on quantum programming.”
- 
--- Jens Palsberg, Professor of Computer Science, UCLA
-
 "Quantum computer programming was until recently a completely theoretical enterprise.  Now, rapid advances in quantum computing hardware have generated a new wave of interest in both academia and industry in programming these machines.   Quantum Computing: An Applied Approach is for this new wave. Emphasizing the nuts and bolts of quantum computing, the textbook covers APIs for multiple platforms including Google, IBM, Microsoft and Rigetti.  Author Jack Hidary guides readers through a range of examples from introductory programs all the way to Shor’s factoring algorithm; the textbook also covers applications that may prove useful in the nearer term and are the subject of active research in the field. For coursework, this book is an excellent practical complement to venerable classics such as Nielsen & Chuang that teach the field’s sometimes-daunting theoretical underpinnings.   Hidary’s textbook will enable researchers and engineers to quickly ramp up in this emerging field."
 
 -- Patrick Hayden, Professor of Physics, Stanford University
 
-"I believe the best way to learn quantum computing is by doing it. My courses have always been hands-on, requiring students to program quantum computers. Until now, a textbook to support this approach was missing: this book covers everything from the canon of foundational quantum algorithms to variational circuits in an accessible language and with accompanying code. I will be using this textbook in my courses."
+
+“This is the best book for a course in quantum computing that I have seen. It gives straightforward explanations of the foundations, history, and hardware, and it walks through executable code for many important algorithms. Additionally, the book brings the reader up to speed with all the math that is needed. I plan to use the book in my course on quantum programming.”
  
--- Peter Wittek, Associate Profesor of Quantum Computing & Quantum Machine Learning, University of Toronto
+-- Jens Palsberg, Professor of Computer Science, UCLA
+
 
 "Hidary's 'Quantum computing: An Applied Approach' provides a welcome bridge from traditional quantum computing texts to the NISQ era which we are now entering. The book takes a modern approach, following the treatment of each of the canonical algorithms with coded versions that can be run on actual quantum computers, along with a survey of various code libraries developed for this purpose. It continues with an overview of state-of-the-art variational and optimization methods such as VQE and OAOA, and a discussion, again with code, of random circuit sampling, the forefront application expected to provide a first realization of quantum supremacy. The book has a companion website for updates and ongoing addition of new resources and developments. By building on the substantial progress of the past five years, this book and its associated resources will facilitate the transition from how quantum computers might be used in principle to how they'll probably be used in practice over the next decade. "
 
