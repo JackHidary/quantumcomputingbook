@@ -54,6 +54,8 @@ For faculty using the book as a course textbook please email jack@hidary.com for
 * [Cirq ion trap demo](https://drive.google.com/file/d/1Bl2VxY9_W1SQ2yp3HasKGz3ielDTSvFO/view?usp=sharing)
 * [Cirq workshop](https://drive.google.com/file/d/10CD0j-RFUV5S7sO6x2fOKauYvBqurzt7/view?usp=sharing)
 
+*Quantum Networking Protocols:  [The Quantum Protocol Zoo](https://wiki.veriqloud.fr) 
+
 ## Book Reviews 
 
 "Quantum computer programming was until recently a completely theoretical enterprise.  Now, rapid advances in quantum computing hardware have generated a new wave of interest in both academia and industry in programming these machines.   Quantum Computing: An Applied Approach is for this new wave. Emphasizing the nuts and bolts of quantum computing, the textbook covers APIs for multiple platforms including Google, IBM, Microsoft and Rigetti.  Author Jack Hidary guides readers through a range of examples from introductory programs all the way to Shor’s factoring algorithm; the textbook also covers applications that may prove useful in the nearer term and are the subject of active research in the field. For coursework, this book is an excellent practical complement to venerable classics such as Nielsen & Chuang that teach the field’s sometimes-daunting theoretical underpinnings.   Hidary’s textbook will enable researchers and engineers to quickly ramp up in this emerging field."
