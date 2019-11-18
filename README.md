@@ -54,7 +54,7 @@ For faculty using the book as a course textbook please email jack@hidary.com for
 * [Cirq ion trap demo](https://drive.google.com/file/d/1Bl2VxY9_W1SQ2yp3HasKGz3ielDTSvFO/view?usp=sharing)
 * [Cirq workshop](https://drive.google.com/file/d/10CD0j-RFUV5S7sO6x2fOKauYvBqurzt7/view?usp=sharing)
 
-*Quantum Networking Protocols:  [The Quantum Protocol Zoo](https://wiki.veriqloud.fr) 
+Quantum Networking Protocols:  [The Quantum Protocol Zoo](https://wiki.veriqloud.fr) 
 
 ## Book Reviews 
 
