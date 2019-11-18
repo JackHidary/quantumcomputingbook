@@ -55,9 +55,9 @@ For faculty using the book as a course textbook please email jack@hidary.com for
 * [Cirq workshop](https://drive.google.com/file/d/10CD0j-RFUV5S7sO6x2fOKauYvBqurzt7/view?usp=sharing)
 
 *Zoos*
-[The Quantum Protocol Zoo](https://wiki.veriqloud.fr) 
-[Quantum Algo Zoo](http://quantumalgorithmzoo.org/)
-[Complexity Zoo](https://complexityzoo.uwaterloo.ca/Complexity_Zoo)
+* [The Quantum Protocol Zoo](https://wiki.veriqloud.fr) 
+* [Quantum Algo Zoo](http://quantumalgorithmzoo.org/)
+* [Complexity Zoo](https://complexityzoo.uwaterloo.ca/Complexity_Zoo)
 
 ## Book Reviews 
 
