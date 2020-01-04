@@ -1,5 +1,5 @@
 """Quantum teleportation in Cirq. Modified from an example at:
-       
+
 https://github.com/quantumlib/Cirq/blob/master/examples/quantum_teleportation.py
 """
 
@@ -16,14 +16,14 @@ def make_quantum_teleportation_circuit(ranX, ranY):
 
     # Creates Bell state to be shared between Alice and Bob
     circuit.append([cirq.H(alice), cirq.CNOT(alice, bob)])
-    
+
     # Creates a random state for the Message
     circuit.append([cirq.X(msg)**ranX, cirq.Y(msg)**ranY])
-    
+
     # Bell measurement of the Message and Alice's entangled qubit
     circuit.append([cirq.CNOT(msg, alice), cirq.H(msg)])
     circuit.append(cirq.measure(msg, alice))
-    
+
     # Uses the two classical bits from the Bell measurement to recover the
     # original quantum Message on Bob's entangled qubit
     circuit.append([cirq.CNOT(alice, bob), cirq.CZ(msg, bob)])
@@ -39,7 +39,7 @@ def main():
 
     # Simulate the circuit
     sim = cirq.Simulator()
-    message = sim.simulate(cirq.Circuit.from_ops(
+    message = sim.simulate(cirq.Circuit(
         [cirq.X(msg)**ranX, cirq.Y(msg)**ranY]))
 
     # Print the Bloch Sphere of Alice's qubit
@@ -49,7 +49,7 @@ def main():
     print("x: ", round(b0X, 4),
           "y: ", round(b0Y, 4),
           "z: ", round(b0Z, 4))
-    
+
     # Display the teleportation circuit
     print("\nCircuit:")
     print(circuit)
