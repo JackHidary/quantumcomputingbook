@@ -1,4 +1,4 @@
-"""Deustch-Jozsa algorithm on three qubits in Cirq."""
+"""Deutsch-Jozsa algorithm on three qubits in Cirq."""
 
 # Import the Cirq library
 import cirq
@@ -18,7 +18,7 @@ balanced = ([cirq.CNOT(q0, q2)],
             [cirq.CNOT(q0, q2), cirq.CNOT(q1, q2), cirq.X(q2)])
 
 def your_circuit(oracle):
-    """Yields a circiut for the Deustch-Jozsa algorithm on three qubits."""
+    """Yields a circuit for the Deutsch-Jozsa algorithm on three qubits."""
     # phase kickback trick
     yield cirq.X(q2), cirq.H(q2)
 

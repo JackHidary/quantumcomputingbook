@@ -1,4 +1,4 @@
-"""Deustch-Jozsa algorithm."""
+"""Deutsch-Jozsa algorithm."""
 
 # Import the Cirq Library
 import cirq
@@ -11,7 +11,7 @@ oracles = {'0': [], '1': [cirq.X(q1)], 'x': [cirq.CNOT(q0, q1)],
            'notx': [cirq.CNOT(q0, q1), cirq.X(q1)]}
 
 def deutsch_algorithm(oracle):
-    """Yields a circuit for Deustch's algorithm given operations implementing
+    """Yields a circuit for Deutsch's algorithm given operations implementing
     the oracle."""
     yield cirq.X(q1)
     yield cirq.H(q0), cirq.H(q1)
@@ -27,7 +27,7 @@ for key, oracle in oracles.items():
 # Get a simulator
 simulator = cirq.Simulator()
 
-# Execute the circuit for each oracle to distingiush constant from balanced
+# Execute the circuit for each oracle to distinguish constant from balanced
 for key, oracle in oracles.items():
     result = simulator.run(
         cirq.Circuit(deutsch_algorithm(oracle)),
