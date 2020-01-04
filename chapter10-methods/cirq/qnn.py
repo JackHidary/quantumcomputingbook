@@ -4,21 +4,22 @@
 import cirq
 import matplotlib.pyplot as plt
 import numpy as np
+import sympy
 
 # Class for a ZX gate in Cirq
 class ZXGate(cirq.ops.eigen_gate.EigenGate,
              cirq.ops.gate_features.TwoQubitGate):
   """ZXGate with variable weight."""
-  
+
   def __init__(self, weight=1):
     """Initializes the ZX Gate up to phase.
 
      Args:
-         weight: rotation angle, period 2 
+         weight: rotation angle, period 2
     """
     self.weight = weight
     super().__init__(exponent=weight) # Automatically handles weights other than 1
-  
+
   def _eigen_components(self):
     return [
         (1, np.array([[0.5, 0.5, 0, 0],
@@ -36,10 +37,10 @@ class ZXGate(cirq.ops.eigen_gate.EigenGate,
     return ZXGate(weight=param_resolver.value_of(self.weight))
 
   # How should the gate look in ASCII diagrams?
-  def _circuit_diagram_info_(self, args):        
+  def _circuit_diagram_info_(self, args):
     return cirq.protocols.CircuitDiagramInfo(
            wire_symbols=('Z', 'X'),
-           exponent=self.weight) 
+           exponent=self.weight)
 
 # Total number of data qubits
 INPUT_SIZE = 9
@@ -52,11 +53,11 @@ params = {'w': 0}
 
 def ZX_layer():
   """Adds a ZX gate between each data qubit and the readout.
-  All gates are given the same cirq.Symbol for a weight."""
+  All gates are given the same sympy.Symbol for a weight."""
   for qubit in data_qubits:
-    yield ZXGate(cirq.Symbol('w')).on(qubit, readout)
-    
-    
+    yield ZXGate(sympy.Symbol('w')).on(qubit, readout)
+
+
 qnn = cirq.Circuit()
 qnn.append(ZX_layer())
 qnn.append([cirq.S(readout)**-1, cirq.H(readout)]) # Basis transformation
@@ -64,8 +65,8 @@ qnn.append([cirq.S(readout)**-1, cirq.H(readout)]) # Basis transformation
 def readout_expectation(state):
   """Takes in a specification of a state as an array of 0s and 1s
   and returns the expectation value of Z on ther readout qubit.
-  Uses the Simulator to calculate the wavefunction exactly."""  
-  
+  Uses the Simulator to calculate the wavefunction exactly."""
+
   # A convenient representation of the state as an integer
   state_num = int(np.sum(state*2**np.arange(len(state))))
 
@@ -83,13 +84,13 @@ def readout_expectation(state):
 
   # Use np.real to eliminate +0j term
   return np.real(np.sum(wf*wf.conjugate()*Z_readout))
-  
+
 def loss(states, labels):
   loss=0
   for state, label in zip(states,labels):
     loss += 1 - label*readout_expectation(state)
   return loss/(2*len(states))
-  
+
 def classification_error(states, labels):
   error=0
   for state,label in zip(states,labels):
