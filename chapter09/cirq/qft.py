@@ -14,11 +14,11 @@ def main():
     qft_circuit = generate_2x2_grid_qft_circuit()
     print('Circuit:')
     print(qft_circuit)
-    
+
     # Simulate and collect the final state
     simulator = cirq.Simulator()
     result = simulator.simulate(qft_circuit)
-    
+
     # Display the final state
     print('\nFinalState')
     print(np.around(result.final_state, 3))
@@ -32,7 +32,7 @@ def cz_and_swap(q0, q1, rot):
 
 def generate_2x2_grid_qft_circuit():
     """Returns a QFT circuit on a 2 x 2 planar qubit architecture.
-     
+
     Circuit adopted from https://arxiv.org/pdf/quant-ph/0402196.pdf.
     """
     # Define a 2*2 square grid of qubits
@@ -40,7 +40,7 @@ def generate_2x2_grid_qft_circuit():
                   cirq.GridQubit(1, 1), cirq.GridQubit(1, 0)]
 
     # Create the Circuit
-    circuit = cirq.Circuit.from_ops(
+    circuit = cirq.Circuit(
         cirq.H(a),
         cz_and_swap(a, b, 0.5),
         cz_and_swap(b, c, 0.25),
@@ -53,7 +53,7 @@ def generate_2x2_grid_qft_circuit():
         cirq.H(a),
         strategy=cirq.InsertStrategy.EARLIEST
     )
-    
+
     return circuit
 
 

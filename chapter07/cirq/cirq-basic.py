@@ -7,7 +7,7 @@ import cirq
 qubit = cirq.GridQubit(0, 0)
 
 # Create a circuit
-circuit = cirq.Circuit.from_ops([
+circuit = cirq.Circuit([
     cirq.X(qubit),  # NOT.
     cirq.measure(qubit, key='m')  # Measurement
     ]
