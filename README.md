@@ -14,15 +14,15 @@ You will find a number of resources on this github site including:
 
 # Problem Sets
 
-* [Chapter 1](./chapter01/chapter01.pdf)
+* [Chapter 1](./chapter01/problems/chapter01.pdf)
 
-* [Chapter 2](./chapter02/chapter02.pdf)
+* [Chapter 2](./chapter02/problems/chapter02.pdf)
 
-* [Chapter 3](./chapter03/chapter03.pdf)
+* [Chapter 3](./chapter03/problems/chapter03.pdf)
 
-* [Chapter 4](./chapter04/chapter04.pdf)
+* [Chapter 4](./chapter04/problems/chapter04.pdf)
 
-* [Chapter 5](./chapter05/chapter05.pdf)
+* [Chapter 5](./chapter05/problems/chapter05.pdf)
 
 * [Chapter 8](./chapter08/problems/chapter08.pdf)
 
