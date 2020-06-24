@@ -2,37 +2,41 @@
 
 # 양자 컴퓨팅: 응용적 접근 - 한글번역 사이트
 
-*Springer출판사의 Quantum Computing: An Applied Approach*책의 한글번역 사이트에 오신 것을 환영합니다. 
+*Springer출판사의 Quantum Computing: An Applied Approach* 책의 한글번역 사이트에 오신 것을 환영합니다. 
 
 [여기 아마존에서 양장본과 킨들버전을 찾으실 수 있습니다.](https://www.amazon.com/Quantum-Computing-Approach-Jack-Hidary-ebook/dp/B07X7NDFLZ/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=)
 
-이 깃허브 사이트에서 다음의 자료들을 제공하고 있습니다.:
+이 깃허브 사이트에서는 다음의 자료들을 제공하고 있습니다:
   - 연습문제
   - 책에 수록된 알고리즘들을 위한 코드
-  - 하단의 더 읽을거리들 링크 
+  - 하단의 더 읽을거리 
   - 책에 대한 새로운 수정사항
 
 # 연습문제
 
-* [제 1장](./chapter01/problems/chapter01.pdf)
+* [제1 장](./chapter01/problems/chapter01.pdf)
 
-* [제 2장](./chapter02/problems/chapter02.pdf)
+* [제2 장](./chapter02/problems/chapter02.pdf)
 
-* [제 3장](./chapter03/problems/chapter03.pdf)
+* [제3 장](./chapter03/problems/chapter03.pdf)
 
-* [제 4장](./chapter04/problems/chapter04.pdf)
+* [제4 장](./chapter04/problems/chapter04.pdf)
 
-* [제 5장](./chapter05/problems/chapter05.pdf)
+* [제5 장](./chapter05/problems/chapter05.pdf)
 
-* [제 8장](./chapter08/problems/chapter08.pdf)
+* [제8 장](./chapter08/problems/chapter08.pdf)
 
-* [제 9장](./chapter09/problems/chapter09.pdf)
+* [제9 장](./chapter09/problems/chapter09.pdf)
 
 다른 장들의 추가 연습문제들은 곧 업로드 될 것입니다.
 
-연습문제들은 다음 분들께서 제공해주셨습니다:  Jack Hidary님, Ryan Larose님, Stefan Leichenauer님, James Myers님.  만일 연습문제 출제에 추가로 기여하고 싶으시다면 연락주시기 바랍니다!  이는 우리 모두를 위한 일입니다.  jack@hidary.com 
+연습문제들은 다음 분들께서 제공해주셨습니다:  
 
-본 도서를 강의교재로 사용하고 싶으신 교수님들께서는 jack@hidary.com로 연락주시면 연습문제 해답을 공유해드리겠습니다. 
+Jack Hidary님, Ryan Larose님, Stefan Leichenauer님, James Myers님.  
+
+만일 연습문제 출제에 추가로 기여하고 싶으시다면 연락주시기 바랍니다!  이는 우리 커뮤니티의 모두를 위한 일입니다.  jack@hidary.com 
+
+또한 본 도서를 강의교재로 사용하고 싶으신 교수님들께서는 jack@hidary.com로 연락주시면 연습문제 해답을 공유해드리겠습니다. 
 
 # 더 읽을거리
 
@@ -61,21 +65,48 @@
 
 ## 서평
 
-"Quantum computer programming was until recently a completely theoretical enterprise.  Now, rapid advances in quantum computing hardware have generated a new wave of interest in both academia and industry in programming these machines.   Quantum Computing: An Applied Approach is for this new wave. Emphasizing the nuts and bolts of quantum computing, the textbook covers APIs for multiple platforms including Google, IBM, Microsoft and Rigetti.  Author Jack Hidary guides readers through a range of examples from introductory programs all the way to Shor’s factoring algorithm; the textbook also covers applications that may prove useful in the nearer term and are the subject of active research in the field. For coursework, this book is an excellent practical complement to venerable classics such as Nielsen & Chuang that teach the field’s sometimes-daunting theoretical underpinnings.   Hidary’s textbook will enable researchers and engineers to quickly ramp up in this emerging field."
+"양자 컴퓨터 프로그래밍은 최근까지 완전히 이론적인 사업이었습니다.
+현재, 양자 컴퓨팅 하드웨어의 빠른 발전으로 인해 학계와 산업계 모두에서
+이러한 컴퓨터 위에서 어떻게 프로그래밍할지 새로운 관심들이 물결치고 있습니다.
+"양자 컴퓨팅: 응용적 접근"은 이 새로운 물결을 위한 책입니다.
+이 교재는 양자 컴퓨팅의 기본을 강조하면서 구글, IBM, 마이크로소프트, 리게티 등 다양한 플랫폼을
+위한 API들을 다루고 있습니다. 저자이신 Jack Hidary님은 다양한 예제를 통해 기초적인 프로그램에서
+부터 쇼어의 소인수 알고리즘에 이르기까지 독자들을 안내합니다.
+이 책은 또한 근미래에 유용하다고 증명되거나 이 분야의 활발한 연구주제인 응용들을 다루고 있습니다. 
+강의자료로써 이 책은 Nielsen & Chuang 같이 이 분야의 어려운 이론적 토대들을 가르치는 
+오래된 고전들의 훌륭하고 실용적인 보완 교재로 쓰일 수 있습니다.
+Hidary님의 교재는 연구원들과 엔지니어들이 새로 생겨난 이 분야에서 빠르게 습득할 수 있도록
+할 것입니다.
 
--- Patrick Hayden, 스탠포드대학교 물리학 교수
+-- Patrick Hayden님, 스탠포드대학교 물리학 교수
 
 
-“This is the best book for a course in quantum computing that I have seen. It gives straightforward explanations of the foundations, history, and hardware, and it walks through executable code for many important algorithms. Additionally, the book brings the reader up to speed with all the math that is needed. I plan to use the book in my course on quantum programming.”
+“이 책은 제가 본 양자 컴퓨팅 교재 중 최고입니다. 기본과 역사, 하드웨어에 대한
+직관적인 설명 뿐만 아니라 많은 중요 알고리즘들을 실행해 볼 수 있는 코드들도 살펴봅니다.
+추가로 이 책은 독자들에게 필요한 모든 수학들을 빠르게 전달해줍니다.
+저 또한 제 양자 프로그래밍 수업에 이 책을 사용할 예정입니다.”
  
 -- Jens Palsberg, UCLA대학교 컴퓨터 과학 교수
 
 
-"Hidary's 'Quantum computing: An Applied Approach' provides a welcome bridge from traditional quantum computing texts to the NISQ era which we are now entering. The book takes a modern approach, following the treatment of each of the canonical algorithms with coded versions that can be run on actual quantum computers, along with a survey of various code libraries developed for this purpose. It continues with an overview of state-of-the-art variational and optimization methods such as VQE and OAOA, and a discussion, again with code, of random circuit sampling, the forefront application expected to provide a first realization of quantum supremacy. The book has a companion website for updates and ongoing addition of new resources and developments. By building on the substantial progress of the past five years, this book and its associated resources will facilitate the transition from how quantum computers might be used in principle to how they'll probably be used in practice over the next decade. "
+"Hidary님의 '양자 컴퓨팅: 응용적 접근' 책은 전통적인 양자 컴퓨팅 교재에서 부터
+현재 우리가 진입하고 있는 NISQ(오류있는 중규모 양자)시대까지 이어주는 훌륭한
+교량역할을 해줍니다. 이 책은 현대적인 접근법을 취해 양자 컴퓨팅을 위해 개발된 
+다양한 라이브러리들을 살펴보며 실제 양자 컴퓨터에서 동작하는
+정수 알고리즘들의 코드들을 살펴봅니다. 
+계속해서 VQE와 OAOA 같은 현존하는 최첨단(state-of-the-art)의 변분 최적화 알고리즘들
+개략적으로 살펴보며 나아가 양자 우위를 처음 실현한 중심이 된 응용 분야인
+무작위 회로 샘플링도 코드와 함께 살펴봅니다.
+이 책의 웹사이트는 추가 수정사항과 진행중인 새로운 개발 자료들을 제공합니다.
+지난 5년간의 실질적인 진보를 토대로, 이 책과 관련 자료들은 
+양자 컴퓨터가 이론적으로 어떻게 쓰일지에 대한 것에서
+양자 컴퓨터가 앞으로 몇십년동안 실용적으로 어떻게 쓰일지로 옮겨가도록 촉진할 것입니다."
 
 -- Paul Ginsparg, 코넬대학교 물리학 교수 
 
-"This book fills a gap in the literature on quantum computing. It is a welcome tool for training and reference with numerous practical code examples, arriving just in time for researchers and engineers in both academia and industry ready to get their hands dirty with programming quantum computers."
+"이 책은 양자 컴퓨팅이라는 문헌들에 있는 간극을 채워 줍니다. 
+양자 컴퓨터 프로그래밍으로 손을 지저분하게 할 준비가 된 학계와 산업계의 연구원 및 엔지니어들에게
+딱 맞게 도착하면서, 학습을 위한 도구로 혹은 다양한 실용 코드 예제들의 참조서로 환영받고 있습니다."
 
 -- Dennis Willsch, 율리히(Jülich) 슈퍼컴퓨팅 연구소
 
@@ -92,4 +123,8 @@
 번역에 대한 문의나 의견 있으시면 jaeyoo@google.com으로 연락주시기 바랍니다.
 
 재(Jae)
+
+SWE, Machine Learning,
+구글 브레인 텐서플로우팀,
+구글 리서치 코리아.
   
