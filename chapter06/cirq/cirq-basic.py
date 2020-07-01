@@ -1,28 +1,28 @@
-"""Simple program in Cirq."""
+"""써큐 라이브러리 간단한 예제 프로그램."""
 
-# Import the Cirq package
+# 써큐 패키지 가져오세요.
 import cirq
 
-# Pick a qubit
+# 큐비트 하나를 고르세요.
 qubit = cirq.GridQubit(0, 0)
 
-# Create a circuit
+# 회로를 만드세요.
 circuit = cirq.Circuit([
-    cirq.X(qubit),  # NOT.
-    cirq.measure(qubit, key='m')  # Measurement
+    cirq.X(qubit),  # 양자 논리에서의 NOT.
+    cirq.measure(qubit, key='m')  # 큐비트 측정.
     ]
 )
 
-# Display the circuit
+# 회로를 화면에 텍스트로 출력합니다.
 print("Circuit:")
 print(circuit)
 
-# Get a simulator to execute the circuit
+# 회로를 실행하기 위한 시뮬레이터를 가져옵니다.
 simulator = cirq.Simulator()
 
-# Simulate the circuit several times
+# 회로를 여러번 시뮬레이션 하세요.
 result = simulator.run(circuit, repetitions=10)
 
-# Print the results
+# 결과를 출력합니다.
 print("Results:")
 print(result)

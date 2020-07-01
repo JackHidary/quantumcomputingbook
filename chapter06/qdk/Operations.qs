@@ -1,10 +1,10 @@
 ﻿namespace Quantum.Simple
 {
-    // Importing the libraries
+    // 라이브러리들을 가져옵니다.
     open Microsoft.Quantum.Primitive;
     open Microsoft.Quantum.Canon;
 
-    // Sets a qubit in a desired state
+    // 큐비트 하나를 원하는 상태(desired_state)에 있도록 설정합니다.
     operation Set(desired_state: Result, qubit: Qubit) : Unit {
         let current = M(qubit);
         if (current != desired_state) {
@@ -12,34 +12,35 @@
         }
     }
 
-    // Executes the "not and measure" circuit for an input number
-    // of repetitions and returns the number of ones measured
+    // 입력받은 숫자만큼 반복하며 "not and measure" 회로를 실행합니다.
+    // 그리고 측정된 1의 개수를 반환합니다.
     operation NotAndMeasure(repetitions: Int) : Int {
-        // Variable to store the number of measured ones
+        // 측정된 1의 개수를 저장할 변수.
         mutable num_ones = 0;
 
-        // Get a qubit to use
+        // 사용할 큐비트 하나를 가져옵니다.
         using (qubit = Qubit()) {
-            // Loop over the desired number of repetitions
+            // 입력받은 수 repetitions 만큼 반복문을 수행합니다.
             for (test in 1..repetitions) {
-                // Get a qubit in the zero state
+                // 큐비트 하나를 |0> 상태로 설정한 후 가져옵니다.
                 Set(Zero, qubit);
 
-                // Perform a NOT operation
+                // NOT 연산을 수행합니다.
                 X(qubit);
 
-                // Measure the qubit
+                // 큐비트를 측정합니다.
                 let res = M (qubit);
 
-                // Keep track of the number of ones we measured
+                // 우리가 측정한 1의 개수를 세어봅니다.
                 if (res == One) {
                     set num_ones = num_ones + 1;
                 }
             }
-            // "Released qubits" must be in the zero state to avoid a System.AggregateException
+            // System.AggregateException 예외를 피하기 위해 큐비트는 항상 할당 해제할 때
+            // |0> 큐비트에 둡니다.
             Set(Zero, qubit);
         }
-        // Return the number of ones measured
+        // 측정된 1의 개수를 출력합니다.
         return num_ones;
     }
 }
