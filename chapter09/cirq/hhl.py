@@ -197,25 +197,23 @@ def hhl_circuit(A, C, t, register_size, *input_prep_gates):
 
     Args:
         A: 에르미트 행렬.
-        C: Algorithm parameter, see above.
-        t: Algorithm parameter, see above.
-        register_size: The size of the eigenvalue register.
-        memory_basis: The basis to measure the memory in, one of 'x', 'y', 'z'.
-        input_prep_gates: A list of gates to be applied to |0> to generate the
-            desired input state |b>.
+        C: 알고리즘 매개변수, 위 설명 참고.
+        t: 알고리즘 매개변수, 위 설명 참고.
+        register_size: 고유값 레지스터의 크기.
+        memory_basis: 'x', 'y', 'z' 중 하나로 메모리 큐비트를 측정할 기저.
+        input_prep_gates: |0> 상태에 가할 게이트들의 리스트로 원하는 입력 상태 |b>에 해당.
 
     Returns:
-        The HHL circuit. The ancilla measurement has key 'a' and the memory
-        measurement is in key 'm'.  There are two parameters in the circuit,
-        `exponent` and `phase_exponent` corresponding to a possible rotation
-        applied before the measurement on the memory with a
-        `cirq.PhasedXPowGate`.
+        HHL 회로를 반환. 보조 큐비트 측정은 키값 'a'를, 메모리 큐비트의 측정은 키값 'm'을
+        갖습니다. 회로에는 두 가지 매개변수가 있습니다. `exponent`와 `phase_exponent`는
+        메모리에 대한 측정이 이루어지기 전에 `cirq.PhasedXPowGate`로 가해질 가능한 회전에
+        대응됩니다.
     """
 
     ancilla = cirq.LineQubit(0)
-    # to store eigenvalues of the matrix
+    # 행렬의 고유값을 저장하기 위한 레지스터.
     register = [cirq.LineQubit(i + 1) for i in range(register_size)]
-    # to store input and output vectors
+    # 입력과 출력 벡터를 저장하기 위한 메모리 큐비트.
     memory = cirq.LineQubit(register_size + 1)
 
     c = cirq.Circuit()
@@ -242,7 +240,7 @@ def hhl_circuit(A, C, t, register_size, *input_prep_gates):
 def simulate(circuit):
     simulator = cirq.Simulator()
 
-    # Cases for measurring X, Y, and Z (respectively) on the memory qubit.
+    # 메모리 큐비트의 X, Y, Z 기저를 각각을 측정하기 위한 회전 게이트용 매개변수들.
     params = [{
         'exponent': 0.5,
         'phase_exponent': -0.5
@@ -257,8 +255,8 @@ def simulate(circuit):
     results = simulator.run_sweep(circuit, params, repetitions=5000)
 
     for label, result in zip(('X', 'Y', 'Z'), list(results)):
-        # Only select cases where the ancilla is 1.
-        # TODO optimize using amplitude amplification algorithm
+        # 오직 보조 큐비트가 1인 경우만 선택합니다.
+        # TODO 진폭 증폭 알고리즘을 사용하여 최적화히기
         expectation = 1 - 2 * np.mean(
             result.measurements['m'][result.measurements['a'] == 1])
         print('{} = {}'.format(label, expectation))
@@ -266,14 +264,16 @@ def simulate(circuit):
 
 def main():
     """
-    Simulates HHL with matrix input, and outputs Pauli observables of the
-    resulting qubit state |x>.
-    Expected observables are calculated from the expected solution |x>.
+    HHL을 행렬 입력과 결과 큐비트 상태인 |x>의 파울리 측정 출력을 시뮬레이션하기.
+    기대되는 해 |x>로 부터 기대되는 관측량을 계산합니다.
     """
 
-    # Eigendecomposition:
-    #   (4.537, [-0.971555, -0.0578339+0.229643j])
-    #   (0.349, [-0.236813, 0.237270-0.942137j])
+    # 고유값분해 결과:
+    # >>> import numpy as np
+    # >>> x, y = np.linalg.eig(A)
+    # >>> [z for z in zip(list(x.astype(np.float32)), list(y))]
+    # [(4.537, array([ 0.9715551 +0.j        , -0.05783371-0.22964251j])),
+    #  (0.349, array([0.05783391-0.22964302j, 0.97155524+0.j        ]))]
     # |b> = (0.64510-0.47848j, 0.35490-0.47848j)
     # |x> = (-0.0662724-0.214548j, 0.784392-0.578192j)
     A = np.array([[4.30213466-6.01593490e-08j,
@@ -285,11 +285,10 @@ def main():
     input_prep_gates = [cirq.Rx(1.276359), cirq.Rz(1.276359)]
     expected = (0.144130, 0.413217, -0.899154)
 
-    # Set C to be the smallest eigenvalue that can be represented by the
-    # circuit.
+    # C를 회로에서 표현가능한 최소의 고유값에 맞춥니다.
     C = 2*math.pi / (2**register_size * t)
 
-    # Simulate circuit
+    # 회로를 시뮬레이션합니다.
     print("Expected observable outputs:")
     print("X =", expected[0])
     print("Y =", expected[1])

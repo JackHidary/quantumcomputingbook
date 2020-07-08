@@ -1,4 +1,4 @@
-"""Example quantum chemistry calculation using OpenFermion and Cirq.
+"""오픈페르미온(OpenFermion)과 써큐를 사용한 양자 화학 계산 예제.
 
 Requirements:
 cirq==0.7.0
@@ -6,7 +6,7 @@ openfermion==0.11.0
 openfermioncirq==0.4.0
 """
 
-# Imports
+# 가져오기
 import numpy
 import scipy
 import sympy
