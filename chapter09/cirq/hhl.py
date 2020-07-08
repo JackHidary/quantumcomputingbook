@@ -283,10 +283,10 @@ def main():
 
     # Eigendecomposition:
     # >>> import numpy as np
-    # >>> x, y = np.linalg.eig(A)
-    # >>> [z for z in zip(list(x.astype(np.float32)), list(y))]
-    # [(4.537, array([ 0.9715551 +0.j        , -0.05783371-0.22964251j])),
-    #  (0.349, array([0.05783391-0.22964302j, 0.97155524+0.j        ]))]
+    # >>> x, y = np.linalg.eigh(A) # Eigendecompsition for complex Hermitian matrix.
+    # >>> [z for z in zip(list(x.astype(np.float32)), list(np.transpose(y)))]
+    # [(0.34899944, array([-0.23681357+0.j,  0.23727026-0.94213702j])),
+    #  (4.5370007,  array([-0.97155511+0.j, -0.05783389+0.229643j]))]
     # |b> = (0.64510-0.47848j, 0.35490-0.47848j)
     # |x> = (-0.0662724-0.214548j, 0.784392-0.578192j)
     A = np.array([[4.30213466-6.01593490e-08j,
