@@ -1,4 +1,4 @@
-"""Quantum phase estimation (QPE) in Cirq."""
+"""써큐에서 양자 위상 추정(QPE)하기."""
 
 # Imports
 import numpy as np
@@ -7,11 +7,12 @@ from scipy.stats import unitary_group
 import cirq
 
 # =============================================================================
-# Helper functions
+# 보조함수
 # =============================================================================
 
 def binary_decimal(string):
-    """Returns the numeric value of 0babc... where a, b, c, ... are bits.
+    """0babc...의 수치값을 반환합니다. 이때 a, b, c, ... 는 각각 0 또는 1입니다.
+       (역자주: 0x1F가 16진수 1F를 의미하듯, 0babc도 2진수 abc를 의미합니다.)
     
     Examples:
         0b10 --> 0.5
@@ -24,13 +25,13 @@ def binary_decimal(string):
     return val
 
 # =============================================================================
-# Input to QPE
+# QPE 입력
 # =============================================================================
 
-# Set seed for reproducible results
+# 결과 재현을 위한 씨앗값 설정.
 np.random.seed(123)
 
-# Get a random unitary matrix on two qubits
+# 두 개 큐비트들에 대한 무작위 유니타리 행렬을 생성.
 m = 2
 dim = 2**m
 unitary = unitary_group.rvs(dim)
@@ -41,46 +42,46 @@ xmat = np.array([[0, 1], [1, 0]])
 zmat = np.array([[1, 0], [0, -1]])
 unitary = np.kron(xmat, zmat)
 
-# Print it to the console
+# 콘솔 화면에 출력하기
 print("Unitary:")
 print(unitary)
 
-# Diagonalize it classically
+# 행렬을 고전적으로 대각화하기.
 evals, evecs = np.linalg.eig(unitary)
 
 # =============================================================================
-# Building the circuit for QPE
+# QPE를 위한 회로 만들기.
 # =============================================================================
 
-# Number of qubits in the readout/answer register (# bits of precision)
+# readout/answer 레지스터에 들어갈 큐비트 개수 설정하기 (정밀도는 비트 개수에 비례합니다.)
 n = 8
 
-# Readout register
+# 출력 레지스터
 regA = cirq.LineQubit.range(n)
 
-# Register for the eigenstate
+# 고유상태를 저장하기위한 레지스터.
 regB = cirq.LineQubit.range(n, n + m)
 
-# Get a circuit
+# 회로 얻기
 circ = cirq.Circuit()
 
-# Hadamard all qubits in the readout register
+# 모든 출력 레지스터 큐비트에 아다마르 연산자를 가하기.
 circ.append(cirq.H.on_each(regA))
 
-# Hadamard all qubits in the second register
+# 두번쨰 레지스터의 모든 큐비트에 아다마르 연산자 가하기.
 #circ.append(cirq.H.on_each(regB))
 
-# Get a Cirq gate for the unitary matrix
+# 입력 유니타리 행렬로 써큐 게이트 만들기
 ugate = cirq.ops.matrix_gates.TwoQubitMatrixGate(unitary)
 
-# Controlled version of the gate
+# 위 유니타리 게이트의 제어 버전 만들기
 cugate = cirq.ops.ControlledGate(ugate)
 
-# Do the controlled U^{2^k} operations
+# 제어-U^{2^k} 연산들을 만들기.
 for k in range(n):
     circ.append(cugate(regA[k], *regB)**(2**k))
 
-# Do the inverse QFT
+# 역 QFT 수행.
 for k in range(n - 1):
     circ.append(cirq.H.on(regA[k]))
     targ = k + 1
@@ -92,7 +93,7 @@ for k in range(n - 1):
 circ.append(cirq.H.on(regA[n - 1]))
 
 """
-# This is the QFT!
+# 이것이 바로 QFT입니다!
 for k in reversed(range(n)):
     circ.append(cirq.H.on(regA[k]))
     for j in reversed(range(k)):
@@ -102,15 +103,15 @@ for k in reversed(range(n)):
         circ.append(crot(regA[j], regA[k]))
 """
 
-# Measure all qubits in the readout register
+# 출력 레지스터에서 모든 큐비트를 측정하기.
 circ.append(cirq.measure(*regA, key="z"))
 
-# Print out the circuit
+# 회로를 출력합니다.
 #print("Circuit:")
 #print(circ[5:])
 
 # =============================================================================
-# Executing the circuit for QPE
+# QPE 회로 실행하기
 # =============================================================================
 
 sim = cirq.Simulator()
