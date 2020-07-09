@@ -64,7 +64,7 @@ qnn.append([cirq.S(readout)**-1, cirq.H(readout)]) # Basis transformation
 
 def readout_expectation(state):
   """Takes in a specification of a state as an array of 0s and 1s
-  and returns the expectation value of Z on ther readout qubit.
+  and returns the expectation value of Z on the readout qubit.
   Uses the Simulator to calculate the wavefunction exactly."""
 
   # A convenient representation of the state as an integer
