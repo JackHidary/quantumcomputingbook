@@ -252,7 +252,7 @@ def hhl_circuit(A, C, t, register_size, *input_prep_gates):
 def simulate(circuit):
     simulator = cirq.Simulator()
 
-    # Cases for measurring X, Y, and Z (respectively) on the memory qubit.
+    # Cases for measuring X, Y, and Z (respectively) on the memory qubit.
     params = [{
         'exponent': 0.5,
         'phase_exponent': -0.5
@@ -282,8 +282,11 @@ def main():
     """
 
     # Eigendecomposition:
-    #   (4.537, [-0.971555, -0.0578339+0.229643j])
-    #   (0.349, [-0.236813, 0.237270-0.942137j])
+    # >>> import numpy as np
+    # >>> x, y = np.linalg.eigh(A) # Eigendecomposition for a complex Hermitian matrix.
+    # >>> [z for z in zip(list(x.astype(np.float32)), list(np.transpose(y)))]
+    # [(0.34899944, array([-0.23681357+0.j,  0.23727026-0.94213702j])),
+    #  (4.5370007,  array([-0.97155511+0.j, -0.05783389+0.229643j]))]
     # |b> = (0.64510-0.47848j, 0.35490-0.47848j)
     # |x> = (-0.0662724-0.214548j, 0.784392-0.578192j)
     A = np.array([[4.30213466-6.01593490e-08j,
