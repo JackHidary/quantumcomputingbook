@@ -12,21 +12,21 @@
   - 하단의 더 읽을거리 
   - 책에 대한 새로운 수정사항
 
-# 연습문제
+# 연습문제 (번역 중)
 
-* [제1 장](./chapter01/problems/chapter01.pdf)
+* [제1 장](./korean/chapter01/problems/chapter01.pdf)
 
-* [제2 장](./chapter02/problems/chapter02.pdf)
+* [제2 장](./korean/chapter02/problems/chapter02.pdf)
 
-* [제3 장](./chapter03/problems/chapter03.pdf)
+* [제3 장](./korean/chapter03/problems/chapter03.pdf)
 
-* [제4 장](./chapter04/problems/chapter04.pdf)
+* [제4 장](./korean/chapter04/problems/chapter04.pdf)
 
-* [제5 장](./chapter05/problems/chapter05.pdf)
+* [제5 장](./korean/chapter05/problems/chapter05.pdf)
 
-* [제8 장](./chapter08/problems/chapter08.pdf)
+* [제8 장](./korean/chapter08/problems/chapter08.pdf)
 
-* [제9 장](./chapter09/problems/chapter09.pdf)
+* [제9 장](./korean/chapter09/problems/chapter09.pdf)
 
 다른 장들의 추가 연습문제들은 곧 업로드 될 것입니다.
 
@@ -86,7 +86,7 @@ Hidary님의 교재는 연구원들과 엔지니어들이 새로 생겨난 이 �
 추가로 이 책은 독자들에게 필요한 모든 수학들을 빠르게 전달해줍니다.
 저 또한 제 양자 프로그래밍 수업에 이 책을 사용할 예정입니다.”
  
--- Jens Palsberg, UCLA대학교 컴퓨터 과학 교수
+-- Jens Palsberg님, UCLA대학교 컴퓨터 과학 교수
 
 
 "Hidary님의 '양자 컴퓨팅: 응용적 접근' 책은 전통적인 양자 컴퓨팅 교재에서 부터
@@ -102,13 +102,13 @@ Hidary님의 교재는 연구원들과 엔지니어들이 새로 생겨난 이 �
 양자 컴퓨터가 이론적으로 어떻게 쓰일지에 대한 것에서
 양자 컴퓨터가 앞으로 몇십년동안 실용적으로 어떻게 쓰일지로 옮겨가도록 촉진할 것입니다."
 
--- Paul Ginsparg, 코넬대학교 물리학 교수 
+-- Paul Ginsparg님, 코넬대학교 물리학 교수 
 
 "이 책은 양자 컴퓨팅이라는 문헌들에 있는 간극을 채워 줍니다. 
 양자 컴퓨터 프로그래밍으로 손을 지저분하게 할 준비가 된 학계와 산업계의 연구원 및 엔지니어들에게
 딱 맞게 도착하면서, 학습을 위한 도구로 혹은 다양한 실용 코드 예제들의 참조서로 환영받고 있습니다."
 
--- Dennis Willsch, 율리히(Jülich) 슈퍼컴퓨팅 연구소
+-- Dennis Willsch님, 율리히(Jülich) 슈퍼컴퓨팅 연구소
 
 
 
@@ -122,8 +122,9 @@ Hidary님의 교재는 연구원들과 엔지니어들이 새로 생겨난 이 �
 
 번역에 대한 문의나 의견 있으시면 Issue에 글을 남겨주시거나 Pull Request를 열고 저와 잭님 혹은 파일의 관련자 분을 검토자로 넣어주시기 바랍니다.
 
-재(Jae)
+재(Jae) & 준호(Joonho)
 
-소프트웨어 엔지니어, 머신러닝,
-구글 브레인 텐서플로우팀,
-구글 리서치 코리아.
+Jae Hyeon Yoo, 머신러닝 소프트웨어 엔지니어, 구글 리서치 코리아
+[Joonho Kim](https://www.ias.edu/scholars/joonho-kim), 자연과학 멤버, 프린스턴 고등과학원
+
+
