@@ -120,11 +120,11 @@ Hidary님의 교재는 연구원들과 엔지니어들이 새로 생겨난 이 �
 
 # 역자주
 
-번역에 대한 문의나 의견 있으시면 Issue에 글을 남겨주시거나 Pull Request를 열고 저와 잭님 혹은 파일의 관련자 분을 검토자로 넣어주시기 바랍니다.
+번역에 대한 문의나 의견 있으시면 Issue에 글을 남겨주시거나 Pull Request를 열고 저희를 검토자로 넣어주시기 바랍니다.
 
 재(Jae) & 준호(Joonho)
 
-Jae Hyeon Yoo, 머신러닝 소프트웨어 엔지니어, 구글 리서치 코리아
-[Joonho Kim](https://www.ias.edu/scholars/joonho-kim), 자연과학 멤버, 프린스턴 고등과학원
+- [Jae Hyeon Yoo](https://research.google/people/106817/), 머신러닝 소프트웨어 엔지니어, 구글 리서치 코리아
+- [Joonho Kim](https://www.ias.edu/scholars/joonho-kim), 내츄럴 사이언스 멤버, 프린스턴 고등과학원
 
 
