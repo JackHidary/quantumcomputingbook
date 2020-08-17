@@ -1,6 +1,6 @@
 """써큐에서 양자 위상 추정(QPE)하기."""
 
-# Imports
+# 가져오기
 import numpy as np
 from scipy.stats import unitary_group
 
