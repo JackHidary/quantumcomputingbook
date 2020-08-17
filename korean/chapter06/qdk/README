@@ -1,0 +1,12 @@
+QDK에서 예제 프로그램을 실행하기 위해서는:
+
+(1) 명령행에서 `dotnet run`을 입력하십시오.
+
+(2) 파일을 visual studio나 visual studio code에서 실행하십시오.
+
+출력은 다음과 같아야합니다.
+
+Number of ones measured: 10.
+
+실행했을 때 `bin`과 `obj` 두 디렉토리가 생성됩니다.
+
