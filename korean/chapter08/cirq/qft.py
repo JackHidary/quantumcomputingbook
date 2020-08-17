@@ -1,6 +1,6 @@
 """4-큐비트계에서 양자 퓨리에 변환을 위한 회로를 생성하기 시뮬레이션하는 예제."""
 
-# Imports
+# 가져오기
 import numpy as np
 
 import cirq
