@@ -1,6 +1,6 @@
 """번스타인-바지라니(Bernstein-Vazirani) 알고리즘 써큐 예제."""
 
-# Imports
+# 가져오기
 import random
 
 import cirq
