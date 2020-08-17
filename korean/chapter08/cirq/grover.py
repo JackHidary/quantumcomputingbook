@@ -1,6 +1,6 @@
 """써큐 그로버(Grover) 알고리즘."""
 
-# Imports
+# 가져오기
 import random
 
 import cirq
