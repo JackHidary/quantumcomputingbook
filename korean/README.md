@@ -14,9 +14,9 @@
 
 # 연습문제 (번역 중)
 
-* [제1 장](./chapter01/problems/chapter01.pdf)
+* [제1 장 (번역완료)](./chapter01/problems/chapter01.pdf)
 
-* [제2 장](./chapter02/problems/chapter02.pdf)
+* [제2 장 (번역완료)](./chapter02/problems/chapter02.pdf)
 
 * [제3 장](./chapter03/problems/chapter03.pdf)
 
