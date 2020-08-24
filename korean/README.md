@@ -14,19 +14,19 @@
 
 # 연습문제 (번역 중)
 
-* [제1 장](./korean/chapter01/problems/chapter01.pdf)
+* [제1 장](./chapter01/problems/chapter01.pdf)
 
-* [제2 장](./korean/chapter02/problems/chapter02.pdf)
+* [제2 장](./chapter02/problems/chapter02.pdf)
 
-* [제3 장](./korean/chapter03/problems/chapter03.pdf)
+* [제3 장](./chapter03/problems/chapter03.pdf)
 
-* [제4 장](./korean/chapter04/problems/chapter04.pdf)
+* [제4 장](./chapter04/problems/chapter04.pdf)
 
-* [제5 장](./korean/chapter05/problems/chapter05.pdf)
+* [제5 장](./chapter05/problems/chapter05.pdf)
 
-* [제8 장](./korean/chapter08/problems/chapter08.pdf)
+* [제8 장](./chapter08/problems/chapter08.pdf)
 
-* [제9 장](./korean/chapter09/problems/chapter09.pdf)
+* [제9 장](./chapter09/problems/chapter09.pdf)
 
 다른 장들의 추가 연습문제들은 곧 업로드 될 것입니다.
 
