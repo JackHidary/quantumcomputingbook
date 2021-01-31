@@ -18,7 +18,7 @@
 
 * [제2 장 (번역완료)](./chapter02/problems/chapter02.pdf)
 
-* [제3 장](./chapter03/problems/chapter03.pdf)
+* [제3 장 (번역완료)](./chapter03/problems/chapter03.pdf)
 
 * [제4 장](./chapter04/problems/chapter04.pdf)
 
