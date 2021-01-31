@@ -26,7 +26,7 @@
 
 * [제8 장](./chapter08/problems/chapter08.pdf)
 
-* [제9 장](./chapter09/problems/chapter09.pdf)
+* [제9 장 (번역완료)](./chapter09/problems/chapter09.pdf)
 
 다른 장들의 추가 연습문제들은 곧 업로드 될 것입니다.
 
