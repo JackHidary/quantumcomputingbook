@@ -80,7 +80,7 @@ def qaoa(gammas, betas):
 def simulate(circ):
     """Returns the wavefunction after applying the circuit."""
     sim = cirq.Simulator()
-    return sim.simulate(circ).final_state
+    return sim.simulate(circ).final_state_vector
 
 
 def energy_from_wavefunction(wf):
