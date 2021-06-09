@@ -96,7 +96,7 @@ class PhaseEstimation(cirq.Gate):
         qubits = list(qubits)
         yield cirq.H.on_each(*qubits[:-1])
         yield PhaseKickback(self.num_qubits(), self.U)(*qubits)
-        yield cirq.QFT(*qubits[:-1], without_reverse=True)**-1
+        yield cirq.qft(*qubits[:-1], without_reverse=True)**-1
 
 
 class HamiltonianSimulation(cirq.EigenGate, cirq.SingleQubitGate):
@@ -198,7 +198,7 @@ class EigenRotation(cirq.Gate):
         if k == 0:
             k = self.N
         theta = 2*math.asin(self.C * self.N * self.t / (2*math.pi * k))
-        return cirq.Ry(theta)
+        return cirq.ry(theta)
 
 
 def hhl_circuit(A, C, t, register_size, *input_prep_gates):
@@ -295,7 +295,7 @@ def main():
                    0.58386534+6.01593489e-08j]])
     t = 0.358166*math.pi
     register_size = 4
-    input_prep_gates = [cirq.Rx(1.276359), cirq.Rz(1.276359)]
+    input_prep_gates = [cirq.rx(1.276359), cirq.rz(1.276359)]
     expected = (0.144130, 0.413217, -0.899154)
 
     # Set C to be the smallest eigenvalue that can be represented by the
