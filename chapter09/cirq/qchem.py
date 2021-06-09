@@ -1,9 +1,7 @@
 """Example quantum chemistry calculation using OpenFermion and Cirq.
 
 Requirements:
-cirq==0.7.0
-openfermion==0.11.0
-openfermioncirq==0.4.0
+openfermion==1.0.1
 """
 
 # Imports
@@ -13,7 +11,6 @@ import sympy
 
 import cirq
 import openfermion
-import openfermioncirq
 
 # Set the number of qubits, simulation time, and seed for reproducibility
 n_qubits = 3
@@ -42,17 +39,17 @@ qubits = cirq.LineQubit.range(n_qubits)
 
 # Rotate to the eigenbasis
 inverse_basis_rotation = cirq.inverse(
-    openfermioncirq.bogoliubov_transform(qubits, basis_transformation_matrix)
+    openfermion.bogoliubov_transform(qubits, basis_transformation_matrix)
 )
-circuit = cirq.Circuit.from_ops(inverse_basis_rotation)
+circuit = cirq.Circuit(inverse_basis_rotation)
 
 # Add diagonal phase rotations to circuit
 for k, eigenvalue in enumerate(eigenvalues):
     phase = -eigenvalue * simulation_time
-    circuit.append(cirq.Rz(rads=phase).on(qubits[k]))
+    circuit.append(cirq.rz(rads=phase).on(qubits[k]))
 
 # Finally, change back to the computational basis
-basis_rotation = openfermioncirq.bogoliubov_transform(
+basis_rotation = openfermion.bogoliubov_transform(
     qubits, basis_transformation_matrix
 )
 circuit.append(basis_rotation)
@@ -71,7 +68,7 @@ exact_state = scipy.sparse.linalg.expm_multiply(
 simulator = cirq.Simulator()
 result = simulator.simulate(circuit, qubit_order=qubits,
                             initial_state=initial_state)
-simulated_state = result.final_state
+simulated_state = result.final_state_vector
 
 # Print final fidelity
 fidelity = abs(numpy.dot(simulated_state, numpy.conjugate(exact_state)))**2
