@@ -45,7 +45,7 @@ def main():
     # Print the Bloch Sphere of Alice's qubit
     print("Bloch Sphere of Alice's qubit:")
     b0X, b0Y, b0Z = cirq.bloch_vector_from_state_vector(
-        message.final_state, 0)
+        message.final_state_vector, 0)
     print("x: ", round(b0X, 4),
           "y: ", round(b0Y, 4),
           "z: ", round(b0Z, 4))
@@ -60,7 +60,7 @@ def main():
     # Print the Bloch sphere of Bob's qubit
     print("\nBloch Sphere of Bob's qubit:")
     b2X, b2Y, b2Z = cirq.bloch_vector_from_state_vector(
-        final_results.final_state, 2)
+        final_results.final_state_vector, 2)
     print("x: ", round(b2X, 4),
           "y: ", round(b2Y, 4),
           "z: ", round(b2Z, 4))
