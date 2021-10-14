@@ -1,4 +1,4 @@
-![Image of QC Book Cover](qc2e.png)
+![Image of QC Book Cover](./img/qc2e.png)
 
 # Online Site for Quantum Computing: An Applied Approach
 
