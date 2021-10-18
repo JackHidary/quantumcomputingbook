@@ -42,4 +42,4 @@ sim = cirq.Simulator()
 res = sim.run(circ, repetitions=1)
 
 # Print out Bob's received message: the outcome of the circuit
-print("\nBob's received message =", bitstring(res.measurements.values()))
+print("\nBob's received message =", bitstring(res.measurements.values())[::-1])
