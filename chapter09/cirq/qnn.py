@@ -7,8 +7,7 @@ import numpy as np
 import sympy
 
 # Class for a ZX gate in Cirq
-class ZXGate(cirq.ops.eigen_gate.EigenGate,
-             cirq.ops.gate_features.TwoQubitGate):
+class ZXGate(cirq.ops.eigen_gate.EigenGate):
   """ZXGate with variable weight."""
 
   def __init__(self, weight=1):
@@ -19,6 +18,10 @@ class ZXGate(cirq.ops.eigen_gate.EigenGate,
     """
     self.weight = weight
     super().__init__(exponent=weight) # Automatically handles weights other than 1
+  def _num_qubits_(self):
+      """Indicates the number of qubits
+      replaces inheriting the superclass TwoQubitGate"""
+      return 2
 
   def _eigen_components(self):
     return [
@@ -33,7 +36,7 @@ class ZXGate(cirq.ops.eigen_gate.EigenGate,
     ]
 
   # This lets the weight be a Symbol. Useful for parameterization.
-  def _resolve_parameters_(self, param_resolver):
+  def _resolve_parameters_(self, param_resolver, recursive=True):
     return ZXGate(weight=param_resolver.value_of(self.weight))
 
   # How should the gate look in ASCII diagrams?
@@ -76,7 +79,7 @@ def readout_expectation(state):
   # Specify an explicit qubit order so that we know which qubit is the readout
   result = simulator.simulate(qnn, resolver, qubit_order=[readout]+data_qubits,
                               initial_state=state_num)
-  wf = result.final_state
+  wf = result.final_state_vector
 
   # Becase we specified qubit order, the Z value of the readout is the most
   # significant bit.
