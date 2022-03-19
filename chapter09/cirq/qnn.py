@@ -18,6 +18,7 @@ class ZXGate(cirq.ops.eigen_gate.EigenGate):
     """
     self.weight = weight
     super().__init__(exponent=weight) # Automatically handles weights other than 1
+
   def _num_qubits_(self):
       """Indicates the number of qubits
       replaces inheriting the superclass TwoQubitGate"""
