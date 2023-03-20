@@ -5,7 +5,7 @@ import cirq
 
 # Helper function for visualizing output
 def bitstring(bits):
-    return ''.join('1' if e else '0' for e in bits)
+    return (''.join('1' if e else '0' for e in bits))[::-1] #reversed the output
 
 # Create two quantum and classical registers
 qreg = [cirq.LineQubit(x) for x in range(2)]
